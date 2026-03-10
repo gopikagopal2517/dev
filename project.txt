@@ -1,2 +1,44 @@
-heloo everyone
-welcome
+ git config --global user.name"gopikagopal2517"
+ git config --global user.mail"gopikagopal2005@gmail.com"
+ git config --list
+mkdir file1.txt
+ cd file1.txt
+ git clone "https://github.com/gopikagopal2517/dev.git"
+ cd dev
+ nano project.txt
+ git add project.txt
+git commit -m "Initial commit"
+ git push origin main
+ git branch feature-branch
+ git checkout feature-branch
+ nano project.txt
+ git add project.txt
+ git commit -m "Features branch update"
+ git push origin feature-branch   
+
+
+
+mkdir merge-git
+cd merge-git
+git init
+echo "initial line of content">merge.txt
+git commit -m "add initial content"
+git checkout -b branch-a
+echo "content from branch A">merge.txt
+git commit -am "modified content on branch A"
+git checkout master
+git checkout -b branch-b
+echo "content from branch b">merge.txt
+git commit -am "modified content on branch b"
+echo "content from branch B">merge.txt
+git commit -am "modified content on branch B"
+git checkout master
+git merge branch-a
+echo "content from branch b">merge.txt
+git commit -am "modified content on branch b"
+git merge branch-b
+cat merge.txt
+echo "combined content from A and B">merge.txt
+cat merge.txt
+git add merge.txt
+git commit -am "merge conflict resolved"
